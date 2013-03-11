@@ -1,6 +1,7 @@
 package copy;
 
 import java.util.Map;
+import java.util.function.Function;
 
 public class Getter<T, F extends Enum<?>, P> {
     public final F field;
