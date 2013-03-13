@@ -23,7 +23,7 @@ public class Artist {
         return name;
     }
 
-    public List<Record> getjRecords() {
+    public List<Record> getRecords() {
         return jRecords;
     }
 
