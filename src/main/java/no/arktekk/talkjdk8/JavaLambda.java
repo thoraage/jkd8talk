@@ -4,7 +4,7 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class WhatIsALambda {
+public class JavaLambda {
 
     {
         JFrame frame = new JFrame();
@@ -19,7 +19,7 @@ public class WhatIsALambda {
     }
 
     public static void main(String[] args) {
-        new WhatIsALambda();
+        new JavaLambda();
     }
 
 }
