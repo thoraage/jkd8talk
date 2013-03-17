@@ -11,13 +11,17 @@ public class Throwables {
         E wrap(Exception e);
     }
 
+    public interface SideEffectWithException<T> {
+        void apply() throws Exception;
+    }
+
     public static <T> T propagate(Callable<T> callable) throws RuntimeException {
         return propagate(callable, RuntimeException::new);
     }
 
-    /*public static <T> void propagate(Callable<T> callable) throws RuntimeException {
-        return propagate(callable, RuntimeException::new);
-    } */
+    public static <T> void propagate(SideEffectWithException<T> sideEffectWithException) throws RuntimeException {
+        propagate(() -> sideEffectWithException, RuntimeException::new);
+    }
 
     public static <T, E extends Throwable> T propagate(Callable<T> callable, ExceptionWrapper<E> wrapper) throws E {
         try {
