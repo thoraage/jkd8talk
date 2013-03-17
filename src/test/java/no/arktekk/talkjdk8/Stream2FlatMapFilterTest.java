@@ -5,6 +5,7 @@ import no.arktekk.talkjdk8.data.Record;
 import org.junit.Test;
 
 import java.util.List;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -29,6 +30,14 @@ public class Stream2FlatMapFilterTest {
         List<String> records = filteredNameStream.collect(Collectors.<String>toList());
 
         assertEquals(asList("Ummagumma", "Mutations"), records);
+    }
+
+    @Test
+    public void countCharacters() {
+        Stream<Record> recordStream = Artist.ARTISTS.stream().flatMap((Artist a) -> a.getRecords().stream());
+        Function<String, Integer> lengthf = String::length;
+        Integer length = recordStream.map(Record::getName).map(lengthf).reduce(0, (Integer a, Integer b) -> a + b);
+        assertEquals(Integer.valueOf(70), length);
     }
 
 }
