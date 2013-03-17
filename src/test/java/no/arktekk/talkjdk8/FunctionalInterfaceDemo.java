@@ -2,6 +2,7 @@ package no.arktekk.talkjdk8;
 
 public class FunctionalInterfaceDemo {
 
+    @java.lang.FunctionalInterface
     public static interface FunctionalInterface {
         void doMe();
     }
