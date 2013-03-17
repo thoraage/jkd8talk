@@ -1,6 +1,6 @@
 package no.arktekk.talkjdk8;
 
-public class FunctionalInterfaceTest {
+public class FunctionalInterfaceDemo {
 
     public static interface FunctionalInterface {
         void doMe();

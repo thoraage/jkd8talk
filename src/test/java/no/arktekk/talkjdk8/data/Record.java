@@ -1,4 +1,4 @@
-package no.arktekk.talkjdk8;
+package no.arktekk.talkjdk8.data;
 
 public class Record {
     private final String name;

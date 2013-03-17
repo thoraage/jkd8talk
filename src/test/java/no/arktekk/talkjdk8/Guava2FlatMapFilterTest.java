@@ -2,6 +2,8 @@ package no.arktekk.talkjdk8;
 
 import com.google.common.collect.FluentIterable;
 import com.google.common.collect.ImmutableList;
+import no.arktekk.talkjdk8.data.Artist;
+import no.arktekk.talkjdk8.data.Record;
 import org.junit.Test;
 
 import java.util.List;

@@ -1,5 +1,7 @@
 package no.arktekk.talkjdk8;
 
+import no.arktekk.talkjdk8.data.Artist;
+import no.arktekk.talkjdk8.data.Record;
 import org.junit.Test;
 
 import java.util.List;
