@@ -10,13 +10,10 @@ import static java.util.Arrays.asList;
 import static org.junit.Assert.assertEquals;
 
 public class Stream2FlatMapFilterTest {
-    private static final List<Artist> ARTISTS = asList(
-            new Artist("Pink Floyd", asList(new Record("Ummagumma"), new Record("The Dark Side of The Moon"))),
-            new Artist("Beck", asList(new Record("Mellow Gold"), new Record("Mutations"), new Record("Midnite Vultures"))));
 
     @Test
     public void listNames() {
-        Stream<Record> recordStream = ARTISTS.stream().flatMap((Artist a) -> a.getRecords().stream());
+        Stream<Record> recordStream = Artist.ARTISTS.stream().flatMap((Artist a) -> a.getRecords().stream());
         Stream<String> nameStream = recordStream.map(Record::getName);
         List<String> records = nameStream.collect(Collectors.<String>toList());
 
@@ -25,7 +22,7 @@ public class Stream2FlatMapFilterTest {
 
     @Test
     public void listShortNames() {
-        Stream<Record> recordStream = ARTISTS.stream().flatMap((Artist a) -> a.getRecords().stream());
+        Stream<Record> recordStream = Artist.ARTISTS.stream().flatMap((Artist a) -> a.getRecords().stream());
         Stream<String> filteredNameStream = recordStream.filter((Record r) -> !r.hasLongName()).map(Record::getName);
         List<String> records = filteredNameStream.collect(Collectors.<String>toList());
 
