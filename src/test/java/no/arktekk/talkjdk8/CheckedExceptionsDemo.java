@@ -5,7 +5,7 @@ import org.apache.commons.io.FileUtils;
 import java.io.File;
 import java.io.IOException;
 
-public class ThrowablesDemo {
+public class CheckedExceptionsDemo {
 
     public static void main(String[] args) {
         try {
