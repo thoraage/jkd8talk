@@ -1,3 +1,5 @@
+package no.arktekk.talkjdk8.util;
+
 import java.util.function.Supplier;
 
 public abstract class Timers {

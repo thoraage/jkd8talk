@@ -18,7 +18,10 @@ public class FunctionalJava2FlatMapFilterTest {
 
     @Test
     public void listNames() {
-        List<String> records = ARTISTS.bind(fj(Artist::getFjRecords)).map(fj(Record::getName));
+        List<String> records = ARTISTS
+                .bind(fj(Artist::getFjRecords))
+                .map(fj(Record::getName));
+
         assertEquals(list("Ummagumma", "The Dark Side of The Moon", "Mellow Gold", "Mutations", "Midnite Vultures"), records);
     }
 
