@@ -2,7 +2,7 @@ package no.arktekk.talkjdk8;
 
 public class JDK8LambdaDemo {
 
-    @java.lang.FunctionalInterface
+    @FunctionalInterface
     public static interface MyFunction {
         void doMe();
     }
