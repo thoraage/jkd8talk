@@ -14,21 +14,14 @@ public class Guava2FlatMapFilterTest {
 
     @Test
     public void listNames() {
-        List<String> records = FluentIterable.from(Artist.ARTISTS)
-                .transformAndConcat(Artist::getRecords)
-                .transform(Record::getName)
-                .toList();
+        List<String> records = null;
 
         assertEquals(asList("Ummagumma", "The Dark Side of The Moon", "Mellow Gold", "Mutations", "Midnite Vultures"), records);
     }
 
     @Test
     public void listShortNames() {
-        List<String> records = FluentIterable.from(Artist.ARTISTS)
-                .transformAndConcat(Artist::getRecords)
-                .transform(Record::getName)
-                .filter((String s) -> !s.contains(" "))
-                .toList();
+        List<String> records = null;
 
         assertEquals(asList("Ummagumma", "Mutations"), records);
     }

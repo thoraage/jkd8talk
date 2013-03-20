@@ -15,32 +15,21 @@ public class Stream2FlatMapFilterTest {
 
     @Test
     public void listNames() {
-        List<String> records = Artist.ARTISTS.stream()
-                .flatMap((Artist a) -> a.getRecords().stream())
-                .map(Record::getName)
-                .collect(Collectors.<String>toList());
+        List<String> records = null;
 
         assertEquals(asList("Ummagumma", "The Dark Side of The Moon", "Mellow Gold", "Mutations", "Midnite Vultures"), records);
     }
 
     @Test
     public void listShortNames() {
-        List<String> records = Artist.ARTISTS.stream()
-                .flatMap((Artist a) -> a.getRecords().stream())
-                .map(Record::getName)
-                .filter((String n) -> !n.contains(" "))
-                .collect(Collectors.<String>toList());
+        List<String> records = null;
 
         assertEquals(asList("Ummagumma", "Mutations"), records);
     }
 
     @Test
     public void countCharacters() {
-        int length = Artist.ARTISTS.stream()
-                .flatMap((Artist a) -> a.getRecords().stream())
-                .map(Record::getName)
-                .map((ToIntFunction<? super String>) String::length)
-                .reduce(0, (int a, int b) -> a + b);
+        int length = 0;
 
         assertEquals(70, length);
     }
