@@ -1,16 +1,15 @@
 package no.arktekk.talkjdk8;
 
-import javax.annotation.Nullable;
+import java.util.Optional;
 
 public class OptionalDemo {
 
-    @Nullable
-    public static Integer getCount() {
-        return 3;
+    public static Optional<Integer> getCount() {
+        return Optional.of(3);
     }
 
     public static void main(String[] args) {
-        for (int i = 0; i < getCount(); ++i) {
+        for (int i = 0; i < getCount().orElse(5); ++i) {
             System.out.println("Hurra");
         }
     }
