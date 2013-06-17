@@ -3,6 +3,7 @@ package no.arktekk.talkjdk8;
 import no.arktekk.talkjdk8.nullable.Address;
 import no.arktekk.talkjdk8.nullable.Person;
 import no.arktekk.talkjdk8.nullable.Position;
+import org.junit.Test;
 
 import javax.annotation.Nullable;
 
@@ -13,7 +14,8 @@ public class OptionalDemo {
         return 3;
     }
 
-    public static void main(String[] args) {
+    @Test
+    public void optional() {
         for (int i = 0; i < getCount(); ++i) {
             System.out.println("Hurra");
         }
@@ -21,7 +23,20 @@ public class OptionalDemo {
 
 
 
-    {
+
+
+
+
+
+
+
+
+
+
+
+
+    @Test
+    public void flatMap() {
         Position position = new Position(new Person(new Address("4001", "Stavanger")), new Person(null));
         String city = "Oslo";
         Person employee = position.getEmployee();
