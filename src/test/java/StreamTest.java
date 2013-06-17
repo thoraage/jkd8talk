@@ -11,7 +11,7 @@ public class StreamTest {
 
     @Test
     public void zip_everyOther() {
-        Stream<Integer> numbers = Streams.iterate(1, n -> n + 1);
+        Stream<Integer> numbers = Stream.iterate(1, n -> n + 1);
         Streams.zip(numbers, list.stream(), (n, s) -> n + " " + s).forEach(System.out::println);
     }
 
