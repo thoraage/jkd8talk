@@ -39,7 +39,7 @@
 
     <properties>
         <jdk8_lambda_javac>${jdk8_lambda_java}c</jdk8_lambda_javac>
-        <jdk8_lambda_java>/usr/local/packages/lambda-8-b94-macosx-x86_64-10_jun_2013/bin/java
+        <jdk8_lambda_java>/Library/Java/JavaVirtualMachines/jdk1.8.0.jdk/Contents/Home/bin/java
         </jdk8_lambda_java>
     </properties>
 

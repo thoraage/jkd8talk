@@ -1,18 +1,15 @@
 package copy;
 
-import static copy.Person.Field.FORE_NAME;
-import static copy.Person.Field.SUR_NAME;
+import java.util.UUID;
 
 public class Person {
-    public static enum Field {
-        SUR_NAME, FORE_NAME
-    }
+    public static Field<String> SUR_NAME = new Field<>(), FORE_NAME = new Field<>();
 
     private final String surName;
     private final String foreName;
 
-    public Person copy(Getter... getters) {
-        return null; //new Person(get(SUR_NAME, surName, getters), get(FORE_NAME, foreName, getters));
+    public Person copy(Field<?>... fields) {
+        return new Person(Field.get(SUR_NAME, fields, surName), Field.get(FORE_NAME, fields, foreName));
     }
 
     public Person(String surName, String foreName) {
