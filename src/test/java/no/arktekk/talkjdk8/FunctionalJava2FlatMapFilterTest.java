@@ -23,14 +23,4 @@ public class FunctionalJava2FlatMapFilterTest {
         assertEquals(list("Ummagumma", "The Dark Side of The Moon", "Mellow Gold", "Mutations", "Midnite Vultures"), records);
     }
 
-    private <I, O> F<I, O> fj(Function<I, O> f) {
-        return new F<I, O>() {
-            @Override
-            public O f(I i) {
-                return f.apply(i);
-            }
-        };
-    }
-
-
 }
